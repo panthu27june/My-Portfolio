@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panth Patel | Portfolio</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #3b82f6;
+        --bg: #0f172a;
+        --card: rgba(255, 255, 255, 0.06);
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+      }
+      section {
+        padding: 110px 10%;
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--card);
+        backdrop-filter: blur(14px);
+        padding: 12px 28px;
+        border-radius: 50px;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        z-index: 999;
+        transition: 0.3s;
+      }
+      nav.scrolled {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+      }
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      nav a:hover {
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      /* HERO */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+      .hero-text {
+        max-width: 600px;
+      }
+      .hero-text h1 {
+        font-size: 60px;
+      }
+      .hero-text span {
+        color: var(--primary);
+      }
+      .hero-text p {
+        margin: 20px 0;
+        color: var(--muted);
+      }
+      .hero-img img {
+        width: 245px;
+        height: 345px;
+        border-radius: 10%;
+        object-fit: cover;
+        border: 6px solid var(--primary);
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+        transition: 0.4s;
+      }
+      .hero-img img:hover {
+        transform: scale(1.05);
+      }
+
+      button {
+        background: var(--primary);
+        border: none;
+        padding: 14px 40px;
+        color: #fff;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
+      }
+
+      /* TITLES */
+      .title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .title h2 {
+        font-size: 42px;
+      }
+
+      /* PROJECTS */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+      }
+      .project {
+        background: var(--card);
+        border-radius: 25px;
+        overflow: hidden;
+        transition: 0.4s;
+      }
+      .project:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+      }
+      .project a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #0b1220;
+        height: 200px;
+        padding: 20px;
+      }
+      .project img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        transition: 0.4s;
+      }
+      .project:hover img {
+        transform: scale(1.08);
+      }
+      .project-content {
+        padding: 25px;
+        text-align: center;
+      }
+      .project h3 {
+        color: var(--primary);
+      }
+
+      /* SKILLS */
+      .skills-category {
+        margin-bottom: 40px;
+      }
+      .skills-category h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+      }
+      .skill {
+        background: var(--card);
+        padding: 20px 25px;
+        border-radius: 15px;
+        text-align: center;
+        width: 110px;
+        transition: 0.3s;
+      }
+      .skill i {
+        font-size: 34px;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+      .skill:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+      }
+
+      /* ABOUT */
+      .about-box {
+        max-width: 900px;
+        margin: auto;
+        background: var(--card);
+        padding: 45px;
+        border-radius: 25px;
+        line-height: 1.8;
+        font-size: 18px;
+      }
+
+      /* CONTACT */
+      form {
+        max-width: 600px;
+        margin: auto;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 16px;
+        margin-bottom: 18px;
+        border: none;
+        border-radius: 12px;
+        background: var(--card);
+        color: var(--text);
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 40px;
+        color: var(--muted);
+      }
+      .social-links {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+      .social-links a {
+        font-size: 26px;
+        color: var(--muted);
+        transition: 0.3s;
+      }
+      .social-links a:hover {
+        color: var(--primary);
+        transform: translateY(-5px) scale(1.2);
+      }
+
+      /* ANIMATION */
+      .fade {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+      .fade.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        #hero {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero-text h1 {
+          font-size: 42px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="hero" class="fade">
+      <div class="hero-text">
+        <h1>Panth <span>Patel</span></h1>
+        <p>
+          Full Stack Developer | MERN Stack Expert building modern web apps &
+          AI-powered solutions.
+        </p>
+        <a href="#projects"><button>View My Projects</button></a>
+      </div>
+      <div class="hero-img">
+        <img src="https://i.ibb.co/whDKybBf/gym.jpg" alt="Panth Patel" />
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="title fade"><h2>Projects</h2></div>
+      <div class="projects">
+        <div class="project fade">
+          <a href="https://panthu27june.github.io/lfg/" target="_blank"
+            ><img src="https://i.ibb.co/whDKybBf/gym.jpg"
+          /></a>
+          <div class="project-content"><h3>Life Line Fitness Gym</h3></div>
+        </div>
+        <div class="project fade">
+          <a
+            href="https://panthu27june.github.io/rupeshmakwanaportfolio/"
+            target="_blank"
+            ><img src="https://i.ibb.co/HpCfM49D/rupesh.jpg"
+          /></a>
+          <div class="project-content"><h3>Rupesh Makwana Portfolio</h3></div>
+        </div>
+        <div class="project fade">
+          <a href="https://panthu27june.github.io/Heart-Space/" target="_blank"
+            ><img
+              src="https://i.ibb.co/Sw6myQGM/Screenshot-2025-04-28-105042.png"
+          /></a>
+          <div class="project-content"><h3>Heart Space</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="fade">
+      <div class="title"><h2>Skills</h2></div>
+
+      <div class="skills-category">
+        <h3>Frontend Development</h3>
+        <div class="skills">
+          <div class="skill"><i class="fab fa-html5"></i>HTML5</div>
+          <div class="skill"><i class="fab fa-css3-alt"></i>CSS3</div>
+          <div class="skill"><i class="fab fa-js"></i>JavaScript</div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3>Backend Development</h3>
+        <div class="skills">
+          <div class="skill"><i class="fab fa-node-js"></i>Node.js</div>
+          <div class="skill"><i class="fas fa-server"></i>Express.js</div>
+          <div class="skill"><i class="fas fa-code"></i>JSON</div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3>Database & Other Technologies</h3>
+        <div class="skills">
+          <div class="skill"><i class="fas fa-database"></i>MySQL</div>
+          <div class="skill"><i class="fas fa-leaf"></i>MongoDB</div>
+          <div class="skill"><i class="fab fa-php"></i>PHP</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="fade">
+      <div class="title"><h2>About Me</h2></div>
+      <div class="about-box">
+        I am an aspiring software developer passionate about Full Stack
+        Development and AI integration. I love solving problems through code and
+        building platforms that make a difference.
+      </div>
+    </section>
+
+    <section id="contact" class="fade">
+      <div class="title"><h2>Contact</h2></div>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p style="margin-top: 15px">© 2026 Panth Patel • Portfolio</p>
+    </footer>
+
+    <script>
+      const faders = document.querySelectorAll(".fade");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      });
+      faders.forEach((el) => observer.observe(el));
+      window.addEventListener("scroll", () => {
+        document
+          .querySelector("nav")
+          .classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+  </body>
+</html>
