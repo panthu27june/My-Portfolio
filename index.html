@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,24 +19,19 @@
         --text: #e2e8f0;
         --muted: #94a3b8;
       }
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: "Times New Roman", serif;
       }
-
       html {
         scroll-behavior: smooth;
       }
-
       body {
         background: var(--bg);
         color: var(--text);
-        overflow-x: hidden;
       }
-
       section {
         padding: 110px 10%;
       }
@@ -55,22 +51,16 @@
         align-items: center;
         z-index: 999;
         transition: 0.3s;
-        flex-wrap: wrap;
-        justify-content: center;
       }
-
       nav.scrolled {
         box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
       }
-
       nav a {
         color: var(--text);
         text-decoration: none;
         font-weight: 600;
         transition: 0.3s;
-        font-size: 15px;
       }
-
       nav a:hover {
         color: var(--primary);
         transform: translateY(-2px);
@@ -84,37 +74,29 @@
         align-items: center;
         gap: 60px;
         flex-wrap: wrap;
-        text-align: center;
       }
-
       .hero-text {
         max-width: 600px;
       }
-
       .hero-text h1 {
         font-size: 60px;
       }
-
       .hero-text span {
         color: var(--primary);
       }
-
       .hero-text p {
         margin: 20px 0;
         color: var(--muted);
-        font-size: 18px;
       }
-
       .hero-img img {
         width: 245px;
         height: 345px;
-        border-radius: 12%;
+        border-radius: 10%;
         object-fit: cover;
         border: 6px solid var(--primary);
         box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
         transition: 0.4s;
       }
-
       .hero-img img:hover {
         transform: scale(1.05);
       }
@@ -129,7 +111,6 @@
         cursor: pointer;
         transition: 0.2s;
       }
-
       button:hover {
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
@@ -140,7 +121,6 @@
         text-align: center;
         margin-bottom: 60px;
       }
-
       .title h2 {
         font-size: 42px;
       }
@@ -148,22 +128,19 @@
       /* PROJECTS */
       .projects {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 35px;
       }
-
       .project {
         background: var(--card);
         border-radius: 25px;
         overflow: hidden;
         transition: 0.4s;
       }
-
       .project:hover {
         transform: translateY(-12px);
         box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
       }
-
       .project a {
         display: flex;
         justify-content: center;
@@ -172,44 +149,54 @@
         height: 200px;
         padding: 20px;
       }
-
       .project img {
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
         transition: 0.4s;
       }
-
+      .project:hover img {
+        transform: scale(1.08);
+      }
       .project-content {
         padding: 25px;
         text-align: center;
       }
-
       .project h3 {
         color: var(--primary);
       }
 
       /* SKILLS */
+      .skills-category {
+        margin-bottom: 40px;
+      }
+      .skills-category h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
       .skills {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 25px;
         justify-content: center;
       }
-
       .skill {
         background: var(--card);
-        padding: 20px;
+        padding: 20px 25px;
         border-radius: 15px;
         text-align: center;
-        width: 120px;
+        width: 110px;
         transition: 0.3s;
       }
-
       .skill i {
-        font-size: 32px;
+        font-size: 34px;
         color: var(--primary);
         margin-bottom: 10px;
+      }
+      .skill:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
       }
 
       /* ABOUT */
@@ -217,11 +204,10 @@
         max-width: 900px;
         margin: auto;
         background: var(--card);
-        padding: 35px;
+        padding: 45px;
         border-radius: 25px;
-        line-height: 1.7;
-        font-size: 17px;
-        text-align: center;
+        line-height: 1.8;
+        font-size: 18px;
       }
 
       /* CONTACT */
@@ -229,7 +215,6 @@
         max-width: 600px;
         margin: auto;
       }
-
       input,
       textarea {
         width: 100%;
@@ -244,16 +229,23 @@
       /* FOOTER */
       footer {
         text-align: center;
-        padding: 40px 20px;
+        padding: 40px;
         color: var(--muted);
       }
-
       .social-links {
         margin-top: 20px;
         display: flex;
         justify-content: center;
         gap: 25px;
-        flex-wrap: wrap;
+      }
+      .social-links a {
+        font-size: 26px;
+        color: var(--muted);
+        transition: 0.3s;
+      }
+      .social-links a:hover {
+        color: var(--primary);
+        transform: translateY(-5px) scale(1.2);
       }
 
       /* ANIMATION */
@@ -262,59 +254,157 @@
         transform: translateY(40px);
         transition: 1s;
       }
-
       .fade.show {
         opacity: 1;
         transform: translateY(0);
       }
 
-      /* MOBILE FIXES */
       @media (max-width: 768px) {
-        section {
-          padding: 90px 6%;
+        #hero {
+          flex-direction: column;
+          text-align: center;
         }
-
-        nav {
-          padding: 10px 18px;
-          gap: 15px;
-        }
-
         .hero-text h1 {
           font-size: 42px;
-        }
-
-        .hero-text p {
-          font-size: 16px;
-        }
-
-        .hero-img img {
-          width: 200px;
-          height: 280px;
-        }
-
-        .title h2 {
-          font-size: 34px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        nav a {
-          font-size: 14px;
-        }
-
-        .hero-text h1 {
-          font-size: 36px;
-        }
-
-        button {
-          padding: 12px 30px;
         }
       }
     </style>
   </head>
 
   <body>
-    <!-- BODY SAME AS YOUR CODE -->
-    <!-- JS SAME -->
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="hero" class="fade">
+      <div class="hero-text">
+        <h1>Panth <span>Patel</span></h1>
+        <p>
+          Full Stack Developer | MERN Stack Expert building modern web apps &
+          AI-powered solutions.
+        </p>
+        <a href="#projects"><button>View My Projects</button></a>
+      </div>
+      <div class="hero-img">
+        <img src="https://i.ibb.co/3mptxYNL/panth.jpg" alt="Panth Patel" />
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="title fade"><h2>Projects</h2></div>
+      <div class="projects">
+        <div class="project fade">
+          <a href="https://panthu27june.github.io/lfg/" target="_blank"
+            ><img src="https://i.ibb.co/whDKybBf/gym.jpg"
+          /></a>
+          <div class="project-content"><h3>Life Line Fitness Gym</h3></div>
+        </div>
+        <div class="project fade">
+          <a
+            href="https://panthu27june.github.io/rupeshmakwanaportfolio/"
+            target="_blank"
+            ><img src="https://i.ibb.co/HpCfM49D/rupesh.jpg"
+          /></a>
+          <div class="project-content"><h3>Rupesh Makwana Portfolio</h3></div>
+        </div>
+        <div class="project fade">
+          <a href="https://panthu27june.github.io/Heart-Space/" target="_blank"
+            ><img
+              src="https://i.ibb.co/Sw6myQGM/Screenshot-2025-04-28-105042.png"
+          /></a>
+          <div class="project-content"><h3>Heart Space</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="fade">
+      <div class="title"><h2>Skills</h2></div>
+
+      <div class="skills-category">
+        <h3>Frontend Development</h3>
+        <div class="skills">
+          <div class="skill"><i class="fab fa-html5"></i>HTML5</div>
+          <div class="skill"><i class="fab fa-css3-alt"></i>CSS3</div>
+          <div class="skill"><i class="fab fa-js"></i>JavaScript</div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3>Backend Development</h3>
+        <div class="skills">
+          <div class="skill"><i class="fab fa-node-js"></i>Node.js</div>
+          <div class="skill"><i class="fas fa-server"></i>Express.js</div>
+          <div class="skill"><i class="fas fa-code"></i>JSON</div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3>Database & Other Technologies</h3>
+        <div class="skills">
+          <div class="skill"><i class="fas fa-database"></i>MySQL</div>
+          <div class="skill"><i class="fas fa-leaf"></i>MongoDB</div>
+          <div class="skill"><i class="fab fa-php"></i>PHP</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="fade">
+      <div class="title"><h2>About Me</h2></div>
+      <div class="about-box">
+        I am an aspiring software developer passionate about Full Stack
+        Development and AI integration. I love solving problems through code and
+        building platforms that make a difference.
+      </div>
+    </section>
+
+    <section id="contact" class="fade">
+      <div class="title"><h2>Contact</h2></div>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://www.instagram.com/09_psycho_90?igsh=cHZmejFlYnR3ZXdi"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.facebook.com/share/1AerL5vGjN/"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://www.github.com/panthu27june"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/panth-patel-8456713a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+      <p style="margin-top: 15px">© 2026 Panth Patel • Portfolio</p>
+    </footer>
+
+    <script>
+      const faders = document.querySelectorAll(".fade");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      });
+      faders.forEach((el) => observer.observe(el));
+      window.addEventListener("scroll", () => {
+        document
+          .querySelector("nav")
+          .classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
   </body>
 </html>
